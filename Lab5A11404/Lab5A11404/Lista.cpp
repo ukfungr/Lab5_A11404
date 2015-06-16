@@ -65,19 +65,6 @@ void Lista::insertarElementoFinal(Elemento * nodoActual) {
 }
 
 
-Elemento * Lista::previo(Elemento * nodoActual, int n){
-	Elemento * temp = head;
-	Elemento * previous = NULL;
-	int i = 0;
-	while (i < n - 2){
-		previous = temp;
-		temp = temp->getNext();
-		i++;
-	}
-	return previous;
-}
-
-
 ostream & operator<<(ostream & out, Lista & l) {
 	l.imprimir(l.head, out, 0);
 	return out;

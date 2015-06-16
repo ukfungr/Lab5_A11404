@@ -18,9 +18,7 @@ public:
 	void insertarElementoInicio(Elemento *);
 	void insertarElementoFinal(Elemento *);
 	void insertarElementoCualquiera(Elemento *, int);
-	
-	Elemento * previo(Elemento *, int);//retorna el elemento anterior al que se desea insertar
-	
+
 	void eliminarElementoInicio();
 	void eliminarElementoFinal();
 	void eliminarPosicionCualquiera(int);
