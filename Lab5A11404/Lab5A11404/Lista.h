@@ -18,7 +18,7 @@ public:
 	void insertarElementoInicio(Elemento *);
 	void insertarElementoFinal(Elemento *);
 	void insertarElementoCualquiera(Elemento *, int);
-
+	
 	void eliminarElementoInicio();
 	void eliminarElementoFinal();
 	void eliminarPosicionCualquiera(int);

@@ -83,6 +83,7 @@
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="ElementoDouble.h" />
     <ClInclude Include="ElementoInt.h" />
+    <ClInclude Include="ElementoIntInt.h" />
     <ClInclude Include="ElementoPersona.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Persona.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="Elemento.cpp" />
     <ClCompile Include="ElementoDouble.cpp" />
     <ClCompile Include="ElementoInt.cpp" />
+    <ClCompile Include="ElementoIntInt.cpp" />
     <ClCompile Include="ElementoPersona.cpp" />
     <ClCompile Include="Lab5A11404.cpp" />
     <ClCompile Include="Lista.cpp" />

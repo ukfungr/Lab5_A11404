@@ -11,6 +11,7 @@
 #include "ElementoDouble.h"
 #include "Persona.h"
 #include "ElementoPersona.h"
+#include "ElementoIntInt.h"
 
 using namespace std;
 
@@ -23,9 +24,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	srand((unsigned int)time(0));
 
 	cout << "Seleccione el tipo de lista que desea generar (indique numero)" << endl;
-	cout << "1. Lista de enteros" << endl;
-	cout << "2. Lista de doubles" << endl;
-	cout << "3. Lista de personas" << endl;
+	cout << "1. Lista de Int" << endl;
+	cout << "2. Lista de Doubles" << endl;
+	cout << "3. Lista de Personas" << endl;
+	cout << "4. Lista de IntInt" << endl;
 	cout << "Indice: ";
 	int r = 0;
 	cin >> r;
@@ -68,7 +70,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "Elimina la posicion " << posicion << endl;
 		cout << l << endl;
 
-		cout << "Elimina el elemento en la lista que se indique" << endl;
+		cout << "Elimina el elemento en la lista que se indique (si esta repetido, elimina el primero que encuentra)" << endl;
 		content = 58;
 		l.eliminarElementoCualquiera(new ElementoInt(content));
 		cout << "Elimina el elemento " << content << endl;
@@ -112,7 +114,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "Elimina la posicion " << posicion << endl;
 		cout << d << endl;
 
-		cout << "Elimina el elemento existente en la lista que se indique" << endl;
+		cout << "Elimina el elemento existente en la lista que se indique (si esta repetido, elimina el primero que encuentra)" << endl;
 		content = 58.97;
 		d.eliminarElementoCualquiera(new ElementoDouble(content));
 		cout << "Elimina el elemento " << content << endl;
@@ -182,10 +184,54 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "Se elimina el elemento en la posicion " << posicion << " de la lista" << endl;
 		cout << q << endl;
 
-		cout << "Elimina cualquier elemento que se indique" << endl;
+		cout << "Elimina cualquier elemento que se indique (si esta repetido, elimina el primero que encuentra)" << endl;
 		q.eliminarElementoCualquiera(new ElementoPersona(h));
 		cout << "Se elimina el elemento " << name << ", id " << id1 << " de la lista" << endl;
 		cout << q << endl;
+	}
+
+	if (r == 4){
+		cout << "Lista de IntInt" << endl;
+		Lista m;
+		for (int i = 0; i < 10; ++i) {
+			m.insertarElemento(new ElementoIntInt(rand() % 100, rand() % 100));
+		}
+		cout << m << endl;
+
+		cout << "Inserta elemento al inicio" << endl;
+		m.insertarElementoInicio(new ElementoIntInt(rand() % 100, rand() % 100));
+		cout << m << endl;
+
+		cout << "Inserta elemento al final" << endl;
+		m.insertarElementoFinal(new ElementoIntInt(rand() % 100, rand() % 100));
+		cout << m << endl;
+
+		cout << "Inserta en cualquier posicion" << endl;
+		int posicion = 5;
+		int content = 58;
+		m.insertarElementoCualquiera(new ElementoIntInt(content, content), posicion);
+		cout << "Se inserta el elemento " << content*content << ", en la posicion " << posicion << " de la lista" << endl;
+		cout << m << endl;
+
+		cout << "Elimina al inicio" << endl;
+		m.eliminarElementoInicio();
+		cout << m << endl;
+
+		cout << "Elimina al final" << endl;
+		m.eliminarElementoFinal();
+		cout << m << endl;
+
+		cout << "Elimina cualquier posicion de 2 a n (1 seria Inicio)" << endl;
+		posicion = 7;
+		m.eliminarPosicionCualquiera(posicion);
+		cout << "Elimina la posicion " << posicion << endl;
+		cout << m << endl;
+
+		cout << "Elimina el elemento en la lista que se indique (si esta repetido, elimina el primero que encuentra)" << endl;
+		content = 58;
+		m.eliminarElementoCualquiera(new ElementoIntInt(content, content));
+		cout << "Elimina el elemento " << content*content << endl;
+		cout << m << endl;
 	}
 
 	system("pause");
@@ -193,7 +239,7 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 
 
-//Función para buscar si el número random generado es repetido
+//Función para buscar si el ID de persona random generado es repetido
 bool findRepeat(int id[100], int number){
 	for (int i = 0; i < 100; i++){
 		if (number == id[i]){
